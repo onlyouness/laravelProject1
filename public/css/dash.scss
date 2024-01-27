@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Bebas+Neue&family=Fraunces:opsz,wght@9..144,700&family=Inter:wght@400;700&family=Josefin+Sans:wght@400;700&family=League+Spartan:wght@400;500;700&family=Lobster&family=Montserrat:wght@500;700&family=Open+Sans&family=Overpass:wght@400;700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:ital,wght@0,500;1,400;1,600&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Red Hat Display", sans-serif ;
+}
+body {
+    margin: 0 auto;
+    
+    
+}
+.nav_container {
+   
+    background-color: rgba(252, 252, 252, 0.849);
+    padding: 1rem;
+}
+nav { 
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul {
+        display: flex;
+        gap: 15px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navSection {
+        gap:40px;
+        li {
+            
+            a {
+                text-decoration: none;
+                font-size: 1.2rem ;
+                color: black;
+            }
+        }
+    }
+
+    li {
+        list-style: none;
+    }
+    .userSection
+    {
+        gap:40px;
+        align-items: center;
+        li:first-child{
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        button{
+        // border: 1px solid #83eba9 ;
+        // color: white;
+        padding: 0.5rem;
+        border-radius: 10px;
+        font-size: 1.1rem;
+
+        padding: 11px 20px;
+        border: unset;
+        border-radius: 15px;
+        color: #212121;
+        z-index: 1;
+        background: #eeecec;
+        position: relative;
+        // font-weight: 1000;
+        font-size: 17px;
+        // -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+        // box-shadow: px 8px 19px -3px rgba(0,0,0,0.27);
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        transition: all 250ms;
+        overflow: hidden;
+
+        cursor: pointer;
+        &:hover {
+            background-color: rgb(199, 199, 199);
+            color: aliceblue;
+        }
+
+    }}
+}
+main{
+    .header{
+        margin: 0 auto;
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        margin-top:2rem ;
+        button a{
+            text-decoration: none ;
+            color: white ;
+        }
+        p{
+            
+            font-size: 1.7rem;
+        }
+    }
+    tr td button a {
+        text-decoration: none;
+        color: white
+    }
+    tr th {
+        padding: 2rem;
+        // display: flex;
+    }
+    tr td{
+        padding: 2rem;
+        img{
+            width:120px;
+            height: 90px;
+            
+        }
+    }
+    .productsList{
+        margin-top: 4rem;
+        table{
+        width: 80%;
+        margin: 0 auto;
+    }
+    }
+    .btn_container{
+        display: flex;
+        gap: 15px;
+        margin-top: 1px;
+    }
+    
+}
+
+.homeContainer{
+    margin: 3em 0 5em 0;
+
+    // display: flex;
+    .items{
+        width: 80%;
+        margin: 0 auto;
+        gap: 15px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
+        align-content: center;
+        .item_list{
+            position: relative;
+            background:#fafafa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:space-between ;
+            .info{
+                width: 80%;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                h2{
+                    font-size: 1.3rem;
+                    margin-bottom: .9rem;
+                }
+                p{
+                    font-size: 1.1rem;
+                }
+            }
+            img{
+                // width: cover;
+                width: 100%;
+                //style the image in grid
+                object-fit: cover;
+
+                width: 100%;
+                max-height: 100%;
+                display: block;
+            }
+            .imageContainer{
+                max-width:200px ;
+            }
+            .panel_section{
+                margin-top: 1.2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                h5{
+                    color: #525252;
+                    font-size: 1.08rem;
+                }
+                button{
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    i{
+                        font-size: 18px;
+                        color: #212121;
+                        // color: #74C0FC;
+                    }
+                }
+            }
+        }
+    }  
+    .sideBar{
+        width:20%;
+    } 
+}
