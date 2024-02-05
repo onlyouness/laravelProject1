@@ -46,7 +46,12 @@ class ProductController extends Controller
     public function showProducts(){
         $products = Product::all();
         $categories = Category::all();
-        return view("home", ["products"=> $products,"categories"=>$categories]);
+        $user = null; // Initialize $user variable
+        if (auth()->check()) {
+            $user = auth()->user();
+        }
+
+        return view("home", ["products"=> $products,'user'=>$user,"categories"=>$categories]);
     }
     public function addProduct(Request $request)
     {

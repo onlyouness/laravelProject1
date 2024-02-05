@@ -20,9 +20,35 @@
                 <li><a href="/category">Category</a></li>
                 <li><a href="">Contact</a></li>
             </ul>
-            <ul class="userSection">
-                <li><i style="color:rgb(75, 75, 75);font-size:29px;display:block;width: 10px; height:12px" class="fa-solid fa-user"></i></li>
-                <li><button>Sign in</button></li>
+            <ul class="userSection"> 
+                @if($user)
+                <div class="dropdown">
+                    
+                    <li class="dropIcon">
+                        <div> 
+                            <img class="img-profile" src="{{asset('/storage/images/profiles/'.$user->image)}}" alt="img">
+                        </div>
+                    </li>
+                    <div class="dropdown-content">
+                       
+                            <h3>Welcome, {{ $user->username }}</h3>
+                            <p><span class="userEmail">Email:</span> {{ $user->email }}</p>
+                            <button class="editbtn" onclick="location.href='/editUser'"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</button>
+                            <button onclick="location.href='/logout'"><i class="fa fa-sign-out"></i>&nbsp;Log Out</button>
+                        
+
+
+                         </div>
+                         </div>
+        @else
+                <div class="dropdown">
+                        <li class="dropIcon btnLog"><button onclick="location.href='/login'" id="loginBtn">Log In </button></li>
+                       
+                       
+                   
+                </div>
+                <li><button><a href="/register">Sign up</a></button></li>
+             @endif
             </ul>
         </nav>
     </div>

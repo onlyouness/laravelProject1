@@ -2,6 +2,7 @@
 
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 
@@ -18,20 +19,34 @@ use App\Http\Controllers\CategoryController;
 
 Route::get('/', function () {
     $products = Product::all();
-    return view('dash',["products"=>$products]);
+
+
+    return view('dash', ["products" => $products]);
 });
 
 Route::get("/showAddProduct", [ProductController::class, "showAddProduct"]);
 Route::post("/addProduct", [ProductController::class, "addProduct"]);
-Route::delete("/delete-product/{product}",[ProductController::class , "deleteProduct"]);
+Route::delete("/delete-product/{product}", [ProductController::class, "deleteProduct"]);
 Route::get("edit-product/{product}", [ProductController::class, 'showEditProduct']);
 Route::put("EditProduct/{product}", [ProductController::class, 'SaveEdit']);
 
 //Category Routes
-Route::get("/category", [CategoryController::class,'showCategory']);
+Route::get("/category", [CategoryController::class, 'showCategory']);
 Route::get("/category/showAddCategory", [CategoryController::class, "showAddCategory"]);
 Route::post("/category/add-category", [CategoryController::class, "addCategory"]);
 Route::delete('/category/delete-category/{category}', [CategoryController::class, "deleteCategory"]);
 
 //Home route
-Route::get("/home", [ProductController::class,'showProducts']);
+
+Route::get("/home", [ProductController::class, 'showProducts']);
+
+// /user Route:
+Route::get("/register", function () {
+    return view("user.register");
+});
+Route::get("/login", function () {
+    return view("user.login");
+});
+Route::get("/logout", [UserController::class,"logout"]);
+Route::post("/login/add", [UserController::class,"login"]);
+Route::post("/register/add", [UserController::class, "createUser"]);
